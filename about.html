@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Lex Mente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Georgia&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --burgundy: #642c35;
+            --oxblood: #4B1E27;
+            --body-text: #212121;
+            --highlight: #a63e4b;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            font-size: 1rem; /* 16px equivalent */
+            line-height: 1.6;
+            color: var(--body-text);
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(100, 44, 53, 0.1);
+        }
+        
+        .logo {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.5rem; /* 24px */
+            font-weight: bold;
+            color: var(--burgundy);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            font-family: Georgia, serif;
+            font-size: 1rem; /* 16px */
+            font-weight: 500;
+            color: var(--body-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--highlight);
+        }
+        
+        /* Main Content */
+        .main-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 2rem; /* 32px */
+            font-weight: bold;
+            color: var(--burgundy);
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: var(--oxblood);
+            margin: 2rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-statement {
+            font-style: italic;
+            font-size: 1.1rem;
+            border-left: 3px solid var(--burgundy);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .mobile-version {
+            display: none;
+            background-color: rgba(100, 44, 53, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .mobile-version p {
+            margin-bottom: 1rem;
+        }
+        
+        .mobile-toggle {
+            display: inline-block;
+            color: var(--highlight);
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: rgba(100, 44, 53, 0.05);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-text {
+            font-size: 0.875rem; /* 14px */
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .desktop-version {
+                display: none;
+            }
+            
+            .mobile-version {
+                display: block;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Lex Mente</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="editorial-board.html">Editorial Board</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="call-for-papers.html">Call for Papers</a></li>
+                <li><a href="policy-guidelines.html">Policies & Guidelines</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main-container">
+        <h1>About Lex Mente</h1>
+        
+        <div class="desktop-version">
+            <p>Lex Mente is a student-led, peer-reviewed legal journal dedicated to advancing rigorous legal research and thought leadership in the discipline of law. Our objective is to provide a dynamic platform for scholars, academicians, practitioners, and students to engage with contemporary legal developments and contribute original academic insights to the evolving legal discourse.</p>
+            
+            <div class="mission-statement">
+                We are committed to academic integrity, editorial independence, and inclusive representation in legal scholarship.
+            </div>
+            
+            <p>The journal publishes high-quality contributions in the form of research articles, case commentaries, and policy notes, with a focus on clarity, relevance, and critical analysis.</p>
+            
+            <h2>Our Review Process</h2>
+            <p>Every submission received undergoes a double-blind peer review process and is assessed on parameters of originality, analytical depth, and academic value. Lex Mente operates under a Creative Commons Attribution-NonCommercial 4.0 International License, ensuring free access to knowledge while protecting author's rights.</p>
+            
+            <h2>Our Vision</h2>
+            <p>Driven by a diverse and visionary editorial team, Lex Mente aspires to become a trusted name in student-led legal publishing. Alongside our journal issues, we aim to organize legal writing competitions, policy workshops, and academic collaborations to promote research-oriented legal culture in India and beyond.</p>
+        </div>
+        
+        <div class="mobile-version">
+            <p>Lex Mente is a student-led, peer-reviewed legal journal dedicated to fostering high-quality legal research and academic discourse. We publish research articles, case commentaries, and policy notes, aiming to build a space where law meets thoughtful scholarship.</p>
+            <span class="mobile-toggle">👉 Tap to read more</span>
+        </div>
+    </main>
+    
+    <footer>
+        <p class="footer-text">For queries, please contact: <a href="mailto:lexmente.journal@gmail.com" style="color: var(--highlight);">lexmente.journal@gmail.com</a></p>
+        <p class="footer-text">© 2023 Lex Mente. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple toggle for mobile version
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            const desktopVersion = document.querySelector('.desktop-version');
+            const mobileVersion = document.querySelector('.mobile-version');
+            
+            if (desktopVersion.style.display === 'none' || desktopVersion.style.display === '') {
+                desktopVersion.style.display = 'block';
+                mobileVersion.querySelector('p:last-child').textContent = '👉 Tap to show less';
+            } else {
+                desktopVersion.style.display = 'none';
+                mobileVersion.querySelector('p:last-child').textContent = '👉 Tap to read more';
+            }
+        });
+    </script>
+</body>
+</html>

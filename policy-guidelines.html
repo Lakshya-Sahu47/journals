@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Guidelines - Lex Mente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Georgia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --burgundy: #642c35;
+            --oxblood: #4B1E27;
+            --body-text: #212121;
+            --highlight: #a63e4b;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            font-size: 1rem; /* 16px equivalent */
+            line-height: 1.6;
+            color: var(--body-text);
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(100, 44, 53, 0.1);
+        }
+        
+        .logo {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.5rem; /* 24px */
+            font-weight: bold;
+            color: var(--burgundy);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            font-family: Georgia, serif;
+            font-size: 1rem; /* 16px */
+            font-weight: 500;
+            color: var(--body-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--highlight);
+        }
+        
+        /* Main Content */
+        .main-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 2rem; /* 32px */
+            font-weight: bold;
+            color: var(--burgundy);
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: var(--oxblood);
+            margin: 2.5rem 0 1.5rem;
+            border-bottom: 2px solid rgba(100, 44, 53, 0.2);
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.25rem; /* 20px */
+            font-weight: 500;
+            color: var(--oxblood);
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        .policy-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        ul {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .highlight-box {
+            background-color: rgba(100, 44, 53, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .email-link {
+            color: var(--highlight);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .email-link:hover {
+            text-decoration: underline;
+        }
+        
+        .license-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--highlight);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        .license-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: rgba(100, 44, 53, 0.05);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-text {
+            font-size: 0.875rem; /* 14px */
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Lex Mente</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="editorial-board.html">Editorial Board</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="call-for-papers.html">Call for Papers</a></li>
+                <li><a href="policy-guidelines.html">Policies & Guidelines</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main-container">
+        <h1>Policy Guidelines</h1>
+        
+        <div class="policy-section">
+            <h2>1. Submission Guidelines</h2>
+            <ul>
+                <li>Lex Mente invites original, unpublished manuscripts from students, academicians, legal professionals, and research scholars.</li>
+                <li>Submissions must be in Microsoft Word (.doc/.docx) format, composed in English, with 1.5 line spacing, justified alignment, and Times New Roman font (12 pt).</li>
+                <li>Word limits:
+                    <ul>
+                        <li>Research Articles: 3,000–6,000 words (excluding footnotes)</li>
+                        <li>Case Commentaries: 1,500–3,000 words</li>
+                        <li>Legislative/Policy Notes: 1,000–2,000 words</li>
+                    </ul>
+                </li>
+                <li>Citations must follow Bluebook 21st Edition (footnotes only; endnotes are not permitted).</li>
+                <li>Manuscripts must be emailed to <a href="mailto:submissions@lexmente.in" class="email-link">submissions@lexmente.in</a> with the subject line: "Submission — [Title] — [Category]".</li>
+            </ul>
+        </div>
+        
+        <div class="policy-section">
+            <h2>2. Review and Editorial Policy</h2>
+            <ul>
+                <li>All manuscripts will undergo a double-blind peer review process to ensure impartial evaluation.</li>
+                <li>Reviews are conducted by qualified subject matter experts and members of the Editorial Board.</li>
+                <li>The Editorial Board reserves the discretion to accept, reject, or request modifications.</li>
+                <li>The average turnaround time for review is 2–4 weeks from the date of formal acknowledgment.</li>
+            </ul>
+        </div>
+        
+        <div class="policy-section">
+            <h2>3. Publication Ethics</h2>
+            <ul>
+                <li>Manuscripts with a similarity index above 10% will be rejected.</li>
+                <li>Submissions must be original and the exclusive intellectual output of the author(s).</li>
+                <li>Simultaneous submission to other journals or platforms is not allowed.</li>
+            </ul>
+        </div>
+        
+        <div class="policy-section">
+            <h2>4. Copyright & Licensing</h2>
+            <ul>
+                <li>Authors retain proprietary rights over their work.</li>
+                <li>Lex Mente receives a non-exclusive, irrevocable license to publish and distribute the content.</li>
+                <li>All published content is governed by the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) license.</li>
+            </ul>
+            
+            <div class="highlight-box">
+                This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="license-link" target="_blank">
+                    <i class="fab fa-creative-commons"></i>
+                    <i class="fab fa-creative-commons-by"></i>
+                    <i class="fab fa-creative-commons-nc"></i>
+                    Creative Commons Attribution-NonCommercial 4.0 International License
+                </a>.
+                <br><br>
+                This license allows the public to use the content for non-commercial purposes with proper attribution, while authors retain full ownership.
+            </div>
+        </div>
+        
+        <div class="policy-section">
+            <h2>5. Article Correction & Retraction Policy</h2>
+            <ul>
+                <li>Authors may request corrections for clerical, typographical, or factual errors. All changes will be documented.</li>
+                <li>Retraction may occur in cases of proven plagiarism, falsified data, or ethical misconduct.</li>
+                <li>A retraction notice will be issued publicly with reasons clearly stated.</li>
+            </ul>
+        </div>
+        
+        <div class="policy-section">
+            <h2>6. Privacy Policy</h2>
+            <ul>
+                <li>Lex Mente respects the confidentiality of all personal and author-related information.</li>
+                <li>Data will be used solely for editorial and administrative purposes.</li>
+                <li>No information shall be disclosed without informed consent.</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            For further correspondence, kindly write to <a href="mailto:info@lexmente.in" class="email-link">info@lexmente.in</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p class="footer-text">For queries, please contact: <a href="mailto:lexmente.journal@gmail.com" style="color: var(--highlight);">lexmente.journal@gmail.com</a></p>
+        <p class="footer-text">© 2023 Lex Mente. All rights reserved.</p>
+    </footer>
+</body>
+</html>

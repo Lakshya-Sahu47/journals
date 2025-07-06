@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Archive - Lex Mente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Georgia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --burgundy: #642c35;
+            --oxblood: #4B1E27;
+            --body-text: #212121;
+            --highlight: #a63e4b;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            font-size: 1rem; /* 16px equivalent */
+            line-height: 1.6;
+            color: var(--body-text);
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(100, 44, 53, 0.1);
+        }
+        
+        .logo {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.5rem; /* 24px */
+            font-weight: bold;
+            color: var(--burgundy);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            font-family: Georgia, serif;
+            font-size: 1rem; /* 16px */
+            font-weight: 500;
+            color: var(--body-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--highlight);
+        }
+        
+        /* Main Content */
+        .main-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 2rem; /* 32px */
+            font-weight: bold;
+            color: var(--burgundy);
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: var(--oxblood);
+            margin: 2.5rem 0 1.5rem;
+        }
+        
+        .volumes-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .volumes-table th {
+            font-family: 'Merriweather', Georgia, serif;
+            font-weight: 600;
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 2px solid var(--burgundy);
+            color: var(--oxblood);
+        }
+        
+        .volumes-table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(100, 44, 53, 0.1);
+        }
+        
+        .volumes-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .coming-soon {
+            color: var(--highlight);
+            font-style: italic;
+        }
+        
+        .article-sample {
+            background-color: rgba(100, 44, 53, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .article-title {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.25rem; /* 20px */
+            font-weight: 600;
+            color: var(--oxblood);
+            margin-bottom: 0.5rem;
+        }
+        
+        .article-meta {
+            font-size: 0.9rem;
+            color: var(--body-text);
+            margin-bottom: 1rem;
+        }
+        
+        .article-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .article-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500;
+            background-color: var(--burgundy);
+            color: var(--white);
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .article-btn:hover {
+            background-color: var(--highlight);
+        }
+        
+        .licensing-note {
+            background-color: rgba(100, 44, 53, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .licensing-note strong {
+            color: var(--oxblood);
+        }
+        
+        .journal-cover {
+            width: 100%;
+            max-width: 300px;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: rgba(100, 44, 53, 0.05);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-text {
+            font-size: 0.875rem; /* 14px */
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .logo {
+                margin-bottom: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .volumes-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Lex Mente</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="editorial-board.html">Editorial Board</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="call-for-papers.html">Call for Papers</a></li>
+                <li><a href="policy-guidelines.html">Policies & Guidelines</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main-container">
+        <h1>Journal Archive</h1>
+        
+        <p>Explore our published volumes featuring peer-reviewed legal scholarship across diverse areas of law.</p>
+        
+        <h2>Volumes & Issues</h2>
+        <table class="volumes-table">
+            <thead>
+                <tr>
+                    <th>Volume</th>
+                    <th>Issue</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Volume 1</td>
+                    <td>Issue 1</td>
+                    <td>July 2025</td>
+                </tr>
+                <tr>
+                    <td>Volume 1</td>
+                    <td>Issue 2</td>
+                    <td>December 2025</td>
+                </tr>
+                <tr>
+                    <td>Volume 2</td>
+                    <td>Issue 1</td>
+                    <td class="coming-soon">Coming Soon</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Sample Article Layout</h2>
+        <div class="article-sample">
+            <div class="article-title">Revisiting the Doctrine of Basic Structure</div>
+            <div class="article-meta">Author: Arnav Sharma<br>Category: Research Article</div>
+            <div class="article-actions">
+                <a href="#" class="article-btn">
+                    <i class="far fa-file-pdf"></i> Read PDF
+                </a>
+                <a href="#" class="article-btn">
+                    <i class="fas fa-quote-right"></i> Cite
+                </a>
+            </div>
+        </div>
+        
+        <div class="licensing-note">
+            <strong>Licensing Note</strong><br>
+            All articles published in <em>Lex Mente</em> are licensed under the <strong>Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)</strong> and are fully open-access.
+        </div>
+        
+        <img src="https://via.placeholder.com/300x450" alt="Journal Cover" class="journal-cover">
+    </main>
+    
+    <footer>
+        <p class="footer-text">For queries, please contact: <a href="mailto:lexmente.journal@gmail.com" style="color: var(--highlight);">lexmente.journal@gmail.com</a></p>
+        <p class="footer-text">© 2023 Lex Mente. All rights reserved.</p>
+    </footer>
+</body>
+</html>

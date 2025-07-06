@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lex Mente - Student-Led Legal Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --burgundy: #642c35;
+            --oxblood: #4B1E27;
+            --body-text: #212121;
+            --highlight: #a63e4b;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            font-size: 1rem; /* 16px equivalent */
+            line-height: 1.6;
+            color: var(--body-text);
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(100, 44, 53, 0.1);
+        }
+        
+        .logo {
+            height: 50px; /* Adjust based on your logo */
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            font-family: Georgia, serif;
+            font-size: 1rem; /* 16px */
+            font-weight: 500;
+            color: var(--body-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--highlight);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 3rem 2rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .quote {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: var(--burgundy);
+            font-style: italic;
+            margin-bottom: 3rem;
+            line-height: 1.4;
+        }
+        
+        .welcome {
+            font-size: 1.25rem; /* 20px */
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .btn {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.875rem; /* 14px */
+            font-weight: 500;
+            border: 2px solid var(--burgundy);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--burgundy);
+            color: var(--white);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--burgundy);
+        }
+        
+        .btn:hover {
+            background-color: var(--highlight);
+            border-color: var(--highlight);
+            color: var(--white);
+        }
+        
+        /* Featured Update */
+        .featured-update {
+            background-color: rgba(100, 44, 53, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .featured-update h2 {
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 1.5rem; /* 24px */
+            font-weight: 600;
+            color: var(--burgundy);
+            margin-top: 0;
+        }
+        
+        .featured-update p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-update .btn {
+            font-size: 0.875rem; /* 14px */
+            padding: 0.5rem 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: rgba(100, 44, 53, 0.05);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-text {
+            font-size: 0.875rem; /* 14px */
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-email {
+            color: var(--highlight);
+            text-decoration: none;
+        }
+        
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="lexmente-logo.png" alt="Lex Mente Logo" class="logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="editorial-board.html">Editorial Board</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="call-for-papers.html">Call for Papers</a></li>
+                <li><a href="policy-guidelines.html">Policies & Guidelines</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="quote">
+                "Law is not a subject of mere study, but a force of change — sharpened by minds, shaped by reason."<br>
+                — <em>Lex Mente Editorial Ethos</em>
+            </div>
+            
+            <div class="welcome">
+                <em>Lex Mente is a student-led legal journal committed to promoting academic excellence and fostering meaningful legal discourse. We aim to build a space where law meets mind.</em>
+            </div>
+            
+            <div class="buttons">
+                <a href="journal.html" class="btn btn-primary">📄 View Journal</a>
+                <a href="call-for-papers.html" class="btn btn-secondary">✍️ Submit Your Paper</a>
+            </div>
+            
+            <div class="featured-update">
+                <h2>Today's Legal Update</h2>
+                <p>Evidence of Motive is Admissible Under Section 8, Indian Evidence Act.</p>
+                <a href="https://www.instagram.com/lexmente.in" class="btn btn-secondary" target="_blank">View More on Instagram →</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p class="footer-text">For queries, please contact: <a href="mailto:lexmente.journal@gmail.com" class="contact-email">lexmente.journal@gmail.com</a></p>
+        <p class="footer-text">© 2023 Lex Mente. All rights reserved.</p>
+    </footer>
+</body>
+</html>
