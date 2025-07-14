@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editorial Board - Lex Mente</title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;600;700&family=Georgia&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
+            --header-blue-gray: rgb(68, 71, 96);
+            --headings-gray: rgb(34, 34, 39);
             --burgundy: #642c35;
             --oxblood: #4B1E27;
             --body-text: #212121;
@@ -17,7 +19,7 @@
         
         body {
             font-family: Georgia, serif;
-            font-size: 1rem; /* 16px equivalent */
+            font-size: 1rem;
             line-height: 1.6;
             color: var(--body-text);
             margin: 0;
@@ -32,33 +34,63 @@
             align-items: center;
             padding: 1rem 2rem;
             border-bottom: 1px solid rgba(100, 44, 53, 0.1);
+            background-color: var(--header-blue-gray);
         }
         
-        .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .logo-text {
             font-family: 'Merriweather', Georgia, serif;
-            font-size: 1.5rem; /* 24px */
+            font-size: 1.5rem;
             font-weight: bold;
-            color: var(--burgundy);
+            color: var(--white);
             text-decoration: none;
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
         }
         
         nav a {
             font-family: Georgia, serif;
-            font-size: 1rem; /* 16px */
-            font-weight: 500;
-            color: var(--body-text);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--white);
             text-decoration: none;
             transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
         }
         
         nav a:hover {
             color: var(--highlight);
+        }
+        
+        nav a.active {
+            color: var(--highlight);
+        }
+        
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--highlight);
         }
         
         /* Main Content */
@@ -68,30 +100,31 @@
             padding: 0 2rem;
         }
         
-        h1 {
+        h1, h2, h3 {
             font-family: 'Merriweather', Georgia, serif;
-            font-size: 2rem; /* 32px */
+            color: var(--headings-gray);
+        }
+        
+        h1 {
+            font-size: 2rem;
             font-weight: bold;
-            color: var(--burgundy);
             margin-bottom: 2rem;
             text-align: center;
         }
         
         h2 {
-            font-family: 'Merriweather', Georgia, serif;
-            font-size: 1.5rem; /* 24px */
+            font-size: 1.5rem;
             font-weight: 600;
-            color: var(--oxblood);
+            color: var(--headings-gray);
             margin: 3rem 0 1.5rem;
             border-bottom: 2px solid rgba(100, 44, 53, 0.2);
             padding-bottom: 0.5rem;
         }
         
         h3 {
-            font-family: 'Merriweather', Georgia, serif;
-            font-size: 1.25rem; /* 20px */
+            font-size: 1.25rem;
             font-weight: 500;
-            color: var(--oxblood);
+            color: var(--headings-gray);
             margin: 1.5rem 0 0.5rem;
         }
         
@@ -116,6 +149,10 @@
         
         .team-card:hover {
             transform: translateY(-5px);
+        }
+        
+        .founder-card {
+            grid-column: span 2;
         }
         
         .team-photo {
@@ -154,8 +191,8 @@
             color: var(--burgundy);
             margin: 2rem 0;
         }
-        
-        /* Footer */
+
+        /* Footer Styles */
         footer {
             background-color: rgba(100, 44, 53, 0.05);
             padding: 2rem;
@@ -163,21 +200,57 @@
             margin-top: 3rem;
         }
         
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--body-text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .social-link:hover {
+            color: var(--highlight);
+        }
+        
+        .social-icon {
+            font-size: 1.25rem;
+        }
+        
         .footer-text {
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             font-weight: 300;
             margin-bottom: 1rem;
         }
-        
+
         /* Responsive Design */
+        @media (max-width: 992px) {
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .founder-card {
+                grid-column: span 1;
+            }
+        }
+        
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 padding: 1rem;
             }
             
-            .logo {
+            .logo-container {
                 margin-bottom: 1rem;
+                flex-direction: column;
+                text-align: center;
             }
             
             nav ul {
@@ -192,25 +265,61 @@
             
             h2 {
                 font-size: 1.25rem;
+                margin: 2rem 0 1rem;
             }
             
             .team-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 0 1rem;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+            
+            .logo-text {
+                font-size: 1.25rem;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+            }
+            
+            h3 {
+                font-size: 1.1rem;
+            }
+            
+            .team-photo {
+                width: 100px;
+                height: 100px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">Lex Mente</a>
+        <div class="logo-container">
+            <img src="logo.png" alt="Lex Mente Logo" class="logo-img">
+            <a href="index.html" class="logo-text">Lex Mente</a>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="editorial-board.html">Editorial Board</a></li>
                 <li><a href="journal.html">Journal</a></li>
                 <li><a href="call-for-papers.html">Call for Papers</a></li>
                 <li><a href="policy-guidelines.html">Policies & Guidelines</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="editorial-board.html" class="active">Editorial Board</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
@@ -234,7 +343,6 @@
                     <div class="team-position">Human Rights Expert</div>
                     <div class="team-bio">Director, Center for Legal Studies</div>
                 </div>
-                <!-- Add more advisory board members as needed -->
             </div>
         </div>
         
@@ -265,6 +373,18 @@
                     <div class="team-position">Senior Editor</div>
                     <div class="team-bio">International Law Expert</div>
                 </div>
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/150" alt="Senior Editor" class="team-photo">
+                    <div class="team-name">Robert Johnson</div>
+                    <div class="team-position">Senior Editor</div>
+                    <div class="team-bio">Corporate Law Specialist</div>
+                </div>
+                <div class="team-card">
+                    <img src="https://via.placeholder.com/150" alt="Senior Editor" class="team-photo">
+                    <div class="team-name">Emma Wilson</div>
+                    <div class="team-position">Senior Editor</div>
+                    <div class="team-bio">Constitutional Law Expert</div>
+                </div>
             </div>
             
             <h3>Associate Editors</h3>
@@ -291,7 +411,7 @@
         </div>
         
         <div class="team-section">
-            <h2>Founding Team</h2>
+            <h2>Founders</h2>
             <div class="team-grid">
                 <div class="team-card">
                     <img src="https://via.placeholder.com/150" alt="Founder" class="team-photo">
@@ -307,7 +427,7 @@
                 </div>
             </div>
             
-            <h3>Media & Design Team</h3>
+            <h3>Media & Design</h3>
             <div class="team-grid">
                 <div class="team-card">
                     <img src="https://via.placeholder.com/150" alt="Designer" class="team-photo">
@@ -330,8 +450,37 @@
     </main>
     
     <footer>
-        <p class="footer-text">For queries, please contact: <a href="mailto:lexmente.journal@gmail.com" style="color: var(--highlight);">lexmente.journal@gmail.com</a></p>
-        <p class="footer-text">© 2023 Lex Mente. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/company/lex-mente70/" class="social-link" target="_blank">
+                <i class="fab fa-linkedin social-icon"></i>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://www.instagram.com/lexmente.in" class="social-link" target="_blank">
+                <i class="fab fa-instagram social-icon"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/share/1Cza7tBuYo/" class="social-link" target="_blank">
+                <i class="fab fa-facebook social-icon"></i>
+                <span>Facebook</span>
+            </a>
+        </div>
+        <p class="footer-text">For queries, please contact: <a href="mailto:support@lexmente.in" style="color: var(--highlight);">support@lexmente.in</a></p>
+        <p class="footer-text">© 2025 Lex Mente. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Highlight current page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (currentPage === linkPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
