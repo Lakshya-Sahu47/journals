@@ -153,6 +153,12 @@
         
         .founder-card {
             grid-column: span 2;
+            padding: 2rem;
+        }
+        
+        .editor-in-chief-card {
+            grid-column: span 2;
+            padding: 2rem;
         }
         
         .team-photo {
@@ -164,9 +170,21 @@
             border: 3px solid var(--burgundy);
         }
         
+        .founder-card .team-photo,
+        .editor-in-chief-card .team-photo {
+            width: 150px;
+            height: 150px;
+            border-width: 4px;
+        }
+        
         .team-name {
             font-weight: 600;
             margin-bottom: 0.25rem;
+        }
+        
+        .founder-card .team-name,
+        .editor-in-chief-card .team-name {
+            font-size: 1.25rem;
         }
         
         .team-position {
@@ -175,9 +193,20 @@
             margin-bottom: 0.5rem;
         }
         
+        .founder-card .team-position,
+        .editor-in-chief-card .team-position {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
         .team-bio {
             font-size: 0.9rem;
             margin-top: 0.5rem;
+        }
+        
+        .founder-card .team-bio,
+        .editor-in-chief-card .team-bio {
+            font-size: 1rem;
         }
         
         .placeholder-img {
@@ -236,8 +265,16 @@
                 gap: 1rem;
             }
             
-            .founder-card {
+            .founder-card,
+            .editor-in-chief-card {
                 grid-column: span 1;
+                padding: 1.5rem;
+            }
+            
+            .founder-card .team-photo,
+            .editor-in-chief-card .team-photo {
+                width: 120px;
+                height: 120px;
             }
         }
         
@@ -351,7 +388,7 @@
             
             <h3>Editor-in-Chief</h3>
             <div class="team-grid">
-                <div class="team-card">
+                <div class="team-card editor-in-chief-card">
                     <img src="https://via.placeholder.com/150" alt="Editor-in-Chief" class="team-photo">
                     <div class="team-name">Sarah Johnson</div>
                     <div class="team-position">Editor-in-Chief</div>
@@ -413,13 +450,13 @@
         <div class="team-section">
             <h2>Founders</h2>
             <div class="team-grid">
-                <div class="team-card">
+                <div class="team-card founder-card">
                     <img src="https://via.placeholder.com/150" alt="Founder" class="team-photo">
                     <div class="team-name">Aarav Sharma</div>
                     <div class="team-position">Founder and Publisher</div>
                     <div class="team-bio">Visionary behind Lex Mente</div>
                 </div>
-                <div class="team-card">
+                <div class="team-card founder-card">
                     <img src="https://via.placeholder.com/150" alt="Co-Founder" class="team-photo">
                     <div class="team-name">Neha Gupta</div>
                     <div class="team-position">Co-Founder</div>
