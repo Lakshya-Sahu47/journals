@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,6 @@
             --header-blue-gray: rgb(68, 71, 96);
             --headings-gray: rgb(34, 34, 39);
             --burgundy: #642c35;
-            --oxblood: #4B1E27;
             --body-text: #212121;
             --highlight: #a63e4b;
             --white: #ffffff;
@@ -25,6 +24,22 @@
             margin: 0;
             padding: 0;
             background-color: var(--white);
+        }
+        
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--highlight);
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
         }
         
         /* Premium Logo Styles */
@@ -65,16 +80,16 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-shadow: 0 2px 8px rgba(0,0,0,0.4);
             -webkit-text-stroke: 0.5px rgba(255,255,255,0.4);
-            text-stroke: 0.5px rgba(255,255,255,0.4);
             letter-spacing: 0.5px;
         }
         
-        .logo-text:hover {
+        .logo-text:hover,
+        .logo-text:focus {
             transform: perspective(100px) translateZ(10px) scale(1.05);
             color: var(--highlight);
             text-shadow: 0 6px 12px rgba(166, 62, 75, 0.5);
             -webkit-text-stroke: 0.5px rgba(255,255,255,0.6);
-            text-stroke: 0.5px rgba(255,255,255,0.6);
+            outline: none;
         }
         
         .logo-text::before {
@@ -89,7 +104,8 @@
             transition: opacity 0.3s ease;
         }
         
-        .logo-text:hover::before {
+        .logo-text:hover::before,
+        .logo-text:focus::before {
             opacity: 1;
         }
         
@@ -104,7 +120,8 @@
             transition: width 0.4s ease;
         }
         
-        .logo-text:hover::after {
+        .logo-text:hover::after,
+        .logo-text:focus::after {
             width: 100%;
         }
         
@@ -113,20 +130,22 @@
             font-size: 0.7rem;
             font-weight: 400;
             letter-spacing: 1.8px;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.9);
             margin-top: 0.5rem;
             transition: all 0.4s ease;
             text-transform: uppercase;
             text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
         
-        .logo-container:hover .logo-tagline {
+        .logo-container:hover .logo-tagline,
+        .logo-container:focus-within .logo-tagline {
             color: var(--highlight);
             letter-spacing: 2px;
             text-shadow: 0 2px 4px rgba(166, 62, 75, 0.3);
         }
         
-        .logo-container:hover .logo-img {
+        .logo-container:hover .logo-img,
+        .logo-container:focus-within .logo-img {
             transform: perspective(500px) rotateX(10deg) rotateY(10deg) scale(1.05);
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
         }
@@ -140,6 +159,7 @@
             color: var(--white);
             font-size: 1.5rem;
             padding: 0.5rem;
+            background-color: transparent;
         }
         
         /* Enhanced Desktop Navigation */
@@ -162,14 +182,16 @@
             padding: 0.75rem 1rem;
             letter-spacing: 0.5px;
             text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            border-radius: 4px;
         }
         
-        .desktop-nav a:hover {
+        .desktop-nav a:hover,
+        .desktop-nav a:focus {
             color: var(--highlight);
             transform: translateY(-2px);
             text-shadow: 0 2px 4px rgba(166, 62, 75, 0.3);
             background: rgba(255,255,255,0.05);
-            border-radius: 4px;
+            outline: none;
         }
         
         .desktop-nav a.active {
@@ -204,7 +226,8 @@
             transition: transform 0.3s ease;
         }
         
-        .desktop-nav a:hover::after {
+        .desktop-nav a:hover::after,
+        .desktop-nav a:focus::after {
             transform-origin: left center;
             transform: scaleX(1);
             background-color: var(--highlight);
@@ -247,8 +270,10 @@
             border-bottom: none;
         }
         
-        .mobile-nav a:hover {
+        .mobile-nav a:hover,
+        .mobile-nav a:focus {
             color: var(--highlight);
+            outline: none;
         }
         
         .mobile-nav a.active {
@@ -361,8 +386,10 @@
             transition: background-color 0.3s;
         }
         
-        .article-btn:hover {
+        .article-btn:hover,
+        .article-btn:focus {
             background-color: var(--highlight);
+            outline: none;
         }
         
         .journal-cover {
@@ -398,12 +425,15 @@
             font-family: Georgia, serif;
         }
         
-        .social-link:hover {
+        .social-link:hover,
+        .social-link:focus {
             color: var(--highlight);
+            outline: none;
         }
         
         .social-icon {
             font-size: 1.25rem;
+            aria-hidden: "true";
         }
         
         .footer-text {
@@ -411,6 +441,24 @@
             font-size: 0.875rem;
             font-weight: 300;
             margin-bottom: 1rem;
+        }
+
+        .contact-email {
+            color: var(--highlight);
+            text-decoration: none;
+        }
+        
+        .contact-email:hover,
+        .contact-email:focus {
+            text-decoration: underline;
+            outline: none;
+        }
+
+        /* Focus styles for accessibility */
+        a:focus,
+        button:focus {
+            outline: 2px solid var(--highlight);
+            outline-offset: 2px;
         }
 
         /* Responsive Design */
@@ -505,20 +553,21 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="Lex Mente Logo" class="logo-img">
+            <img src="logo.png" alt="Lex Mente Logo - Student-Led Legal Journal" class="logo-img" loading="lazy">
             <a href="index.html" class="logo-text">
                 LEX MENTE
                 <span class="logo-tagline">WHERE MINDS MEET LAW</span>
             </a>
         </div>
         
-        <button class="hamburger" aria-label="Menu">
+        <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
             <i class="fas fa-bars"></i>
         </button>
         
-        <nav class="desktop-nav">
+        <nav class="desktop-nav" aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="journal.html">Journal</a></li>
@@ -530,7 +579,7 @@
             </ul>
         </nav>
         
-        <nav class="mobile-nav">
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="journal.html">Journal</a></li>
@@ -543,7 +592,7 @@
         </nav>
     </header>
     
-    <main class="main-container">
+    <main id="main-content" class="main-container">
         <h1>Journal Archive</h1>
         
         <p>Explore our published volumes featuring peer-reviewed legal scholarship across diverse areas of law.</p>
@@ -577,32 +626,32 @@
         </table>
         
         <h2>Sample Article</h2>
-        <div class="article-sample">
-            <div class="article-title">Revisiting the Doctrine of Basic Structure</div>
+        <article class="article-sample">
+            <h3 class="article-title">Revisiting the Doctrine of Basic Structure</h3>
             <div class="article-meta">Author: Arnav Sharma<br>Category: Research Article</div>
             <div class="article-actions">
                 <a href="#" class="article-btn">
-                    <i class="far fa-file-pdf"></i> Read PDF
+                    <i class="far fa-file-pdf" aria-hidden="true"></i> Read PDF
                 </a>
                 <a href="#" class="article-btn">
-                    <i class="fas fa-quote-right"></i> Cite
+                    <i class="fas fa-quote-right" aria-hidden="true"></i> Cite
                 </a>
             </div>
-        </div>
+        </article>
     </main>
     
     <footer>
         <div class="social-links">
-            <a href="https://www.linkedin.com/company/lex-mente70/" class="social-link" target="_blank">
-                <i class="fab fa-linkedin social-icon"></i>
+            <a href="https://www.linkedin.com/company/lex-mente70/" class="social-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin social-icon" aria-hidden="true"></i>
                 <span>LinkedIn</span>
             </a>
-            <a href="https://www.instagram.com/lexmente.in" class="social-link" target="_blank">
-                <i class="fab fa-instagram social-icon"></i>
+            <a href="https://www.instagram.com/lexmente.in" class="social-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram social-icon" aria-hidden="true"></i>
                 <span>Instagram</span>
             </a>
-            <a href="https://www.facebook.com/share/1Cza7tBuYo/" class="social-link" target="_blank">
-                <i class="fab fa-facebook social-icon"></i>
+            <a href="https://www.facebook.com/share/1Cza7tBuYo/" class="social-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook social-icon" aria-hidden="true"></i>
                 <span>Facebook</span>
             </a>
         </div>
@@ -612,34 +661,34 @@
 
     <script>
         // Hamburger menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
-        
-        hamburger.addEventListener('click', function() {
-            mobileNav.classList.toggle('active');
-            
-            // Change icon between hamburger and X
-            const icon = hamburger.querySelector('i');
-            if (mobileNav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileNav.classList.remove('active');
-                hamburger.querySelector('i').classList.remove('fa-times');
-                hamburger.querySelector('i').classList.add('fa-bars');
-            });
-        });
-
-        // Highlight current page in navigation
         document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const mobileNav = document.querySelector('.mobile-nav');
+            
+            hamburger.addEventListener('click', function() {
+                const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+                mobileNav.classList.toggle('active');
+                hamburger.setAttribute('aria-expanded', !isExpanded);
+                
+                // Change icon between hamburger and X
+                const icon = hamburger.querySelector('i');
+                if (mobileNav.classList.contains('active')) {
+                    icon.classList.replace('fa-bars', 'fa-times');
+                } else {
+                    icon.classList.replace('fa-times', 'fa-bars');
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.mobile-nav a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileNav.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    hamburger.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                });
+            });
+
+            // Highlight current page in navigation
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             const navLinks = document.querySelectorAll('nav a');
             

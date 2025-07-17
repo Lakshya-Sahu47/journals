@@ -402,19 +402,19 @@
                 display: none;
             }
             
-            .hamburger {
-                display: block;
-            }
-            
-            .mobile-nav.active {
-                display: block;
-            }
-            
             .desktop-version {
                 display: none;
             }
             
             .mobile-version {
+                display: block;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .mobile-nav.active {
                 display: block;
             }
             
@@ -462,7 +462,7 @@
             </a>
         </div>
         
-        <button class="hamburger" aria-label="Menu">
+        <button class="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
             <i class="fas fa-bars"></i>
         </button>
         
@@ -478,7 +478,7 @@
             </ul>
         </nav>
         
-        <nav class="mobile-nav">
+        <nav class="mobile-nav" id="mobile-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="journal.html">Journal</a></li>
@@ -541,11 +541,12 @@
         const mobileNav = document.querySelector('.mobile-nav');
         
         hamburger.addEventListener('click', function() {
-            mobileNav.classList.toggle('active');
+            const isExpanded = mobileNav.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isExpanded);
             
             // Change icon between hamburger and X
             const icon = hamburger.querySelector('i');
-            if (mobileNav.classList.contains('active')) {
+            if (isExpanded) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
             } else {
@@ -558,6 +559,7 @@
         document.querySelectorAll('.mobile-nav a').forEach(link => {
             link.addEventListener('click', function() {
                 mobileNav.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
                 hamburger.querySelector('i').classList.remove('fa-times');
                 hamburger.querySelector('i').classList.add('fa-bars');
             });
@@ -578,7 +580,7 @@
         });
 
         // Enhanced navigation highlighting
-        document.addEventListener('DOMContentLoaded', function() {
+        function updateActiveNav() {
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
             const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
             
@@ -590,6 +592,10 @@
                     link.classList.remove('active');
                 }
             });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateActiveNav();
             
             // Initialize mobile content state
             if (window.innerWidth <= 768) {
@@ -599,17 +605,7 @@
 
         // Update navigation on window resize
         window.addEventListener('resize', function() {
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
-            
-            navLinks.forEach(link => {
-                const linkPage = link.getAttribute('href');
-                if (currentPage === linkPage) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
+            updateActiveNav();
         });
     </script>
 </body>
