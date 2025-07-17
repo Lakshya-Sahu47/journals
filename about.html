@@ -15,6 +15,9 @@
             --body-text: #212121;
             --highlight: #a63e4b;
             --white: #ffffff;
+            --linkedin-blue: #0077b5;
+            --instagram-purple: #e4405f;
+            --facebook-blue: #3b5998;
         }
         
         body {
@@ -346,16 +349,33 @@
             gap: 0.5rem;
             color: var(--body-text);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
             font-family: Georgia, serif;
         }
         
         .social-link:hover {
-            color: var(--highlight);
+            transform: translateY(-2px);
         }
         
         .social-icon {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover .social-icon {
+            transform: scale(1.1);
+        }
+        
+        .linkedin-icon {
+            color: var(--linkedin-blue);
+        }
+        
+        .instagram-icon {
+            color: var(--instagram-purple);
+        }
+        
+        .facebook-icon {
+            color: var(--facebook-blue);
         }
         
         .footer-text {
@@ -518,16 +538,16 @@
     
     <footer>
         <div class="social-links">
-            <a href="https://www.linkedin.com/company/lex-mente70/" class="social-link" target="_blank">
-                <i class="fab fa-linkedin social-icon"></i>
+            <a href="https://www.linkedin.com/company/lex-mente70/" class="social-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin social-icon linkedin-icon"></i>
                 <span>LinkedIn</span>
             </a>
-            <a href="https://www.instagram.com/lexmente.in" class="social-link" target="_blank">
-                <i class="fab fa-instagram social-icon"></i>
+            <a href="https://www.instagram.com/lexmente.in" class="social-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram social-icon instagram-icon"></i>
                 <span>Instagram</span>
             </a>
-            <a href="https://www.facebook.com/share/1Cza7tBuYo/" class="social-link" target="_blank">
-                <i class="fab fa-facebook social-icon"></i>
+            <a href="https://www.facebook.com/share/1Cza7tBuYo/" class="social-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook social-icon facebook-icon"></i>
                 <span>Facebook</span>
             </a>
         </div>

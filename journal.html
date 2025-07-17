@@ -14,6 +14,9 @@
             --body-text: #212121;
             --highlight: #a63e4b;
             --white: #ffffff;
+            --linkedin-blue: #0a66c2;
+            --instagram-purple: #e1306c;
+            --facebook-blue: #1877f2;
         }
         
         body {
@@ -24,22 +27,6 @@
             margin: 0;
             padding: 0;
             background-color: var(--white);
-        }
-        
-        /* Skip to content link */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--highlight);
-            color: white;
-            padding: 8px;
-            z-index: 100;
-            transition: top 0.3s;
-        }
-
-        .skip-link:focus {
-            top: 0;
         }
         
         /* Premium Logo Styles */
@@ -421,7 +408,7 @@
             gap: 0.5rem;
             color: var(--body-text);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
             font-family: Georgia, serif;
         }
         
@@ -433,7 +420,24 @@
         
         .social-icon {
             font-size: 1.25rem;
-            aria-hidden: "true";
+            transition: color 0.3s;
+        }
+        
+        .social-link[href*="linkedin"] .social-icon {
+            color: var(--linkedin-blue);
+        }
+        
+        .social-link[href*="instagram"] .social-icon {
+            color: var(--instagram-purple);
+        }
+        
+        .social-link[href*="facebook"] .social-icon {
+            color: var(--facebook-blue);
+        }
+        
+        .social-link:hover .social-icon,
+        .social-link:focus .social-icon {
+            color: var(--highlight);
         }
         
         .footer-text {
@@ -553,7 +557,6 @@
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="logo-container">
             <img src="logo.png" alt="Lex Mente Logo - Student-Led Legal Journal" class="logo-img" loading="lazy">

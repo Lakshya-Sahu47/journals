@@ -15,6 +15,9 @@
             --body-text: #212121;
             --highlight: #a63e4b;
             --white: #ffffff;
+            --linkedin-blue: #0077b5;
+            --instagram-purple: #e4405f;
+            --facebook-blue: #3b5998;
         }
         
         body {
@@ -344,7 +347,7 @@
             margin-top: 1rem;
             font-family: 'Merriweather', Georgia, serif;
         }
-        
+         
         .btn:hover {
             background-color: var(--highlight);
         }
@@ -370,16 +373,33 @@
             gap: 0.5rem;
             color: var(--body-text);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
             font-family: Georgia, serif;
         }
         
         .social-link:hover {
-            color: var(--highlight);
+            transform: translateY(-2px);
         }
         
         .social-icon {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover .social-icon {
+            transform: scale(1.1);
+        }
+        
+        .linkedin-icon {
+            color: var(--linkedin-blue);
+        }
+        
+        .instagram-icon {
+            color: var(--instagram-purple);
+        }
+        
+        .facebook-icon {
+            color: var(--facebook-blue);
         }
         
         .footer-text {
@@ -524,9 +544,9 @@
     <main class="main-container">
         <h1>Call for Papers</h1>
         
-        <p>Lex Mente Law Journal invites original, unpublished manuscripts for its upcoming issue. We welcome contributions from academicians, legal professionals, researchers, and students across diverse areas of law and allied disciplines.</p>
+        <p>Lex Mente Law Journal invites original, unpublished manuscripts for its upcoming issue. We welcome contributions from students, researchers, and legal professional across diverse areas of law and allied disciplines.</p>
         
-        <p>Submissions may address any contemporary legal issue. Interdisciplinary topics with legal significance are also encouraged. Suggested areas include but are not limited to Constitutional Law, Criminal Justice, International Law, Human Rights, and emerging legal paradigms.</p>
+        <p>Submissions may address any contemporary legal issue. Interdisciplinary topics with legal significance are also encouraged. Suggested themes include Constitutional Law, Criminal Justice, International Law, Human Rights, and emerging legal paradigms, though submissions are not limited to these.</p>
         
         <h2>Important Dates</h2>
         <div class="dates-container">
@@ -535,7 +555,7 @@
                 <ul>
                     <li>Submissions Open: 1st April</li>
                     <li>Last Date for Submission: 31st May</li>
-                    <li>Tentative Publication Date: 15th July</li>
+                    <li>Tentative Publication Date: 15th June</li>
                 </ul>
             </div>
             
@@ -544,14 +564,14 @@
                 <ul>
                     <li>Submissions Open: 1st October</li>
                     <li>Last Date for Submission: 30th November</li>
-                    <li>Tentative Publication Date: 15th January</li>
+                    <li>Tentative Publication Date: 15th December</li>
                 </ul>
             </div>
         </div>
         
         <h2>Submission Categories</h2>
         <ul>
-            <li><strong>Research Papers</strong> (3000–6000 words)</li>
+            <li><strong>Research Papers</strong> (2500–4000 words)</li>
             <li><strong>Case Commentaries</strong> (1500–2500 words)</li>
             <li><strong>Legislative/Policy Notes</strong> (1000–2000 words)</li>
         </ul>
@@ -583,16 +603,16 @@
     
     <footer>
         <div class="social-links">
-            <a href="https://www.linkedin.com/company/lex-mente70/" class="social-link" target="_blank">
-                <i class="fab fa-linkedin social-icon"></i>
+            <a href="https://www.linkedin.com/company/lex-mente70/" class="social-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin social-icon linkedin-icon"></i>
                 <span>LinkedIn</span>
             </a>
-            <a href="https://www.instagram.com/lexmente.in" class="social-link" target="_blank">
-                <i class="fab fa-instagram social-icon"></i>
+            <a href="https://www.instagram.com/lexmente.in" class="social-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram social-icon instagram-icon"></i>
                 <span>Instagram</span>
             </a>
-            <a href="https://www.facebook.com/share/1Cza7tBuYo/" class="social-link" target="_blank">
-                <i class="fab fa-facebook social-icon"></i>
+            <a href="https://www.facebook.com/share/1Cza7tBuYo/" class="social-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook social-icon facebook-icon"></i>
                 <span>Facebook</span>
             </a>
         </div>
