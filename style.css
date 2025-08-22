@@ -1321,7 +1321,7 @@ button:focus {
     max-width: 200px;
     height: 200px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 8px;
     margin-bottom: 1.2rem;
     border: 3px solid var(--burgundy);
 }
@@ -1383,11 +1383,13 @@ button:focus {
 .founder-card .team-photo,
 .editor-in-chief-card .team-photo,
 .advisor-card .team-photo {
-    width: 200px;
+     width: 200px;
     height: 200px;
     margin-right: 2rem;
     margin-bottom: 0;
     flex-shrink: 0;
+    border-radius: 8px; /* Changed from 50% to 8px to match */
+    border: 3px solid var(--burgundy);
 }
 
 .founder-card .team-info,
