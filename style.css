@@ -648,7 +648,7 @@ header {
 .founder-card .team-name,
 .editor-in-chief-card .team-name,
 .advisor-card .team-name {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .team-position {
@@ -1372,7 +1372,7 @@ button:focus {
     background-color: rgba(100, 44, 53, 0.1);
     border: 2px solid var(--burgundy);
     grid-column: 1 / -1;
-    max-width: 600px;
+    max-width: 850px;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -1383,7 +1383,7 @@ button:focus {
 .founder-card .team-photo,
 .editor-in-chief-card .team-photo,
 .advisor-card .team-photo {
-     width: 200px;
+    width: 200px;
     height: 200px;
     margin-right: 2rem;
     margin-bottom: 0;
@@ -1403,7 +1403,8 @@ button:focus {
 .founder-card .team-name,
 .editor-in-chief-card .team-name,
 .advisor-card .team-name {
-    font-size: 1.5rem;
+    font-size: 1 rem;
+    white-space: nowrap;
 }
 
 .founder-card .team-position,
