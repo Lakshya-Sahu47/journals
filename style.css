@@ -1399,25 +1399,27 @@ button:focus {
 }
 
 /* Responsive design for editorial board */
+/* Responsive design for editorial board */
 @media (max-width: 992px) {
-    .advisor-card, 
+    .advisor-card,
     .editor-in-chief-card {
-        gap: 0;
-        padding: 0;
-        height: 280px;
+        flex-direction: column; /* Stacks the image and info vertically */
+        height: auto;
+        max-width: 100%;
     }
-
-    .advisor-card .team-photo, 
+    .advisor-card .team-photo,
     .editor-in-chief-card .team-photo {
-        width: 35%;
+        width: 100%; /* Makes the photo take full width */
+        height: 250px; /* Sets a fixed height for the photo on medium screens */
+        object-fit: cover;
+        border-radius: 8px 8px 0 0; /* Applies border-radius to the top corners */
     }
-    
-    .advisor-card .team-info, 
+    .advisor-card .team-info,
     .editor-in-chief-card .team-info {
-        width: 65%;
-        padding: 1.25rem;
+        width: 100%; /* Makes the info section take full width */
+        padding: 1.5rem; /* Ensures consistent padding */
+        text-align: center; /* Centers the text */
     }
-    
     .team-grid {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
@@ -1437,19 +1439,19 @@ button:focus {
         height: auto;
     }
 
-    .advisor-card .team-photo, 
+    .advisor-card .team-photo,
     .editor-in-chief-card .team-photo {
         width: 100%;
         height: 250px;
         margin-bottom: 0;
     }
-    
-    .advisor-card .team-info, 
+
+    .advisor-card .team-info,
     .editor-in-chief-card .team-info {
         width: 100%;
         padding: 1.25rem;
     }
-    
+
     .team-card {
         height: auto;
         min-height: 420px;
@@ -1457,21 +1459,22 @@ button:focus {
 }
 
 @media (max-width: 480px) {
-    .advisor-card .team-photo, 
+    .advisor-card .team-photo,
     .editor-in-chief-card .team-photo {
         height: 220px;
     }
-    
-    .advisor-card .team-info, 
+
+    .advisor-card .team-info,
     .editor-in-chief-card .team-info {
         padding: 1rem;
     }
-    
+
     .advisor-card .team-name,
     .editor-in-chief-card .team-name {
         font-size: 1.3rem;
     }
 }
+
 
 /* Responsive Design */
 @media (max-width: 992px) {
