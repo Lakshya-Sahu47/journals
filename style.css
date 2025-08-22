@@ -557,6 +557,9 @@ header {
     box-shadow: 0 4px 8px rgba(0,0,0,0.07);
     border: 1px solid #e0e0e0;
     overflow: hidden;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
 }
 
 .team-card:hover {
@@ -577,6 +580,12 @@ header {
 /* Remove the max-width constraint for regular team cards */
 .team-card .team-photo {
     max-width: none;
+}
+
+/* For images that need special handling */
+.team-photo.full-image {
+    object-fit: contain;
+    background-color: #f5f5f5; /* Add background for images with transparency */
 }
 
 /* Featured card styles */
@@ -623,6 +632,9 @@ header {
 
 .team-info {
     padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .team-name {
@@ -646,6 +658,17 @@ header {
     font-weight: 400;
 }
 
+.team-position-box {
+    display: inline-block;
+    background-color: var(--burgundy);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
 .founder-card .team-position,
 .editor-in-chief-card .team-position,
 .advisor-card .team-position {
@@ -658,6 +681,7 @@ header {
     margin-top: 0.4rem;
     font-weight: 400;
     color: #666;
+    flex-grow: 1;
 }
 
 .founder-card .team-bio,
@@ -1276,15 +1300,15 @@ button:focus {
 .team-card {
     background-color: rgba(100, 44, 53, 0.05);
     border-radius: 8px;
-    padding: 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.07);
-    transition: all 0.3s ease;
+    padding: 1.5rem;
     text-align: center;
-    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+    border: 1px solid rgba(100, 44, 53, 0.1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    height: 420px;
+    align-items: center;
 }
 
 .team-card:hover {
@@ -1294,239 +1318,141 @@ button:focus {
 
 .team-photo {
     width: 100%;
-    height: 220px;
+    max-width: 200px;
+    height: 200px;
     object-fit: cover;
-    margin: 0 auto;
-    border-radius: 8px 8px 0 0;
-    border: none;
-}
-
-.team-info {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between;
+    border-radius: 50%;
+    margin-bottom: 1.2rem;
+    border: 3px solid var(--burgundy);
 }
 
 .team-name {
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
     margin-bottom: 0.5rem;
-    color: var(--oxblood);
+    font-size: 1.2rem;
+    color: var(--headings-gray);
 }
 
 .team-position {
-    font-style: italic;
-    margin-bottom: 0.75rem;
     color: var(--burgundy);
-    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .team-bio {
+    font-size: 0.95rem;
+    color: #666;
     margin-bottom: 1rem;
     flex-grow: 1;
-    color: var(--body-text);
-    opacity: 0.9;
 }
 
 .team-social {
     display: flex;
-    gap: 0.75rem;
     justify-content: center;
-    margin-top: auto;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .team-social a {
-    color: var(--oxblood);
+    color: var(--burgundy);
     font-size: 1.2rem;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.team-social a:hover,
-.team-social a:focus {
+.team-social a:hover {
     color: var(--highlight);
-    outline: none;
 }
 
-/* Special card styles for Patron and Editor-in-Chief */
-.advisor-card,
-.editor-in-chief-card {
+/* Featured cards for important team members */
+.founder-card,
+.editor-in-chief-card,
+.advisor-card {
+    background-color: rgba(100, 44, 53, 0.1);
+    border: 2px solid var(--burgundy);
     grid-column: 1 / -1;
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
-    align-items: stretch;
-    gap: 0;
-    background-color: var(--light-bg);
-    border-radius: 8px;
-    padding: 0;
     text-align: left;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 320px;
-    overflow: hidden;
+    padding: 2rem;
 }
 
-.advisor-card .team-photo,
-.editor-in-chief-card .team-photo {
-    width: 40%;
-    height: 100%;
-    border-radius: 0;
-    object-fit: cover;
+.founder-card .team-photo,
+.editor-in-chief-card .team-photo,
+.advisor-card .team-photo {
+    width: 200px;
+    height: 200px;
+    margin-right: 2rem;
+    margin-bottom: 0;
     flex-shrink: 0;
-    border: none;
-    box-shadow: none;
 }
 
-.advisor-card .team-info,
-.editor-in-chief-card .team-info {
-    padding: 1.5rem;
+.founder-card .team-info,
+.editor-in-chief-card .team-info,
+.advisor-card .team-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 60%;
 }
 
-.advisor-card .team-name,
-.editor-in-chief-card .team-name {
+.founder-card .team-name,
+.editor-in-chief-card .team-name,
+.advisor-card .team-name {
     font-size: 1.5rem;
 }
 
-/* Founder card styles */
-.founder-card {
-    border-top: 4px solid var(--burgundy);
+.founder-card .team-position,
+.editor-in-chief-card .team-position,
+.advisor-card .team-position {
+    font-size: 1.1rem;
 }
 
-/* Responsive design for editorial board */
-/* Responsive design for editorial board */
-@media (max-width: 992px) {
-    .advisor-card,
-    .editor-in-chief-card {
-        flex-direction: column; /* Stacks the image and info vertically */
-        height: auto;
-        max-width: 100%;
-    }
-    .advisor-card .team-photo,
-    .editor-in-chief-card .team-photo {
-        width: 100%; /* Makes the photo take full width */
-        height: 250px; /* Sets a fixed height for the photo on medium screens */
-        object-fit: cover;
-        border-radius: 8px 8px 0 0; /* Applies border-radius to the top corners */
-    }
-    .advisor-card .team-info,
-    .editor-in-chief-card .team-info {
-        width: 100%; /* Makes the info section take full width */
-        padding: 1.5rem; /* Ensures consistent padding */
-        text-align: center; /* Centers the text */
-    }
-    .team-grid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    }
-}
-
+/* Responsive adjustments for featured cards */
 @media (max-width: 768px) {
-    .team-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .advisor-card,
-    .editor-in-chief-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 0;
-        height: auto;
-    }
-
-    .advisor-card .team-photo,
-    .editor-in-chief-card .team-photo {
-        width: 100%;
-        height: 250px;
-        margin-bottom: 0;
-    }
-
-    .advisor-card .team-info,
-    .editor-in-chief-card .team-info {
-        width: 100%;
-        padding: 1.25rem;
-    }
-
-    .team-card {
-        height: auto;
-        min-height: 420px;
-    }
-}
-
-@media (max-width: 480px) {
-    .advisor-card .team-photo,
-    .editor-in-chief-card .team-photo {
-        height: 220px;
-    }
-
-    .advisor-card .team-info,
-    .editor-in-chief-card .team-info {
-        padding: 1rem;
-    }
-
-    .advisor-card .team-name,
-    .editor-in-chief-card .team-name {
-        font-size: 1.3rem;
-    }
-}
-
-
-/* Responsive Design */
-@media (max-width: 992px) {
-    .desktop-nav ul {
-        gap: 0.6rem;
-    }
-    
     .founder-card,
     .editor-in-chief-card,
     .advisor-card {
-        grid-column: span 1;
-        padding: 0;
+        flex-direction: column;
+        text-align: center;
+        max-width: 400px;
     }
     
     .founder-card .team-photo,
     .editor-in-chief-card .team-photo,
     .advisor-card .team-photo {
-        width: 100%;
-        height: 220px;
-    }
-    
-    .quote {
-        font-size: 1.2rem;
+        margin-right: 0;
+        margin-bottom: 1.5rem;
     }
 }
 
+/* === END OF EDITORIAL BOARD PAGE STYLES === */
+
+/* Responsive Design */
 @media (max-width: 768px) {
+    /* Mobile header adjustments */
     header {
-        flex-direction: row;
-        padding: 0.8rem;
+        padding: 1rem;
         height: auto;
-    }
-    
-    .logo-container {
-        margin-bottom: 0;
-        flex-direction: row;
-        text-align: left;
+        min-height: 80px;
     }
     
     .logo-img {
-        height: 55px;
+        height: 60px;
     }
     
     .logo-text {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
     
     .logo-tagline {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         letter-spacing: 1.5px;
     }
     
+    /* Mobile navigation */
     .desktop-nav {
         display: none;
     }
@@ -1535,179 +1461,134 @@ button:focus {
         display: block;
     }
     
-    .mobile-nav.active {
-        display: block;
-    }
-    
-    .dates-container {
-        flex-direction: column;
+    /* Main content adjustments */
+    .main-container {
+        margin: 2rem auto;
     }
     
     h1 {
-        font-size: 1.6rem;
+        font-size: 2rem;
     }
     
     h2 {
-        font-size: 1.15rem;
+        font-size: 1.5rem;
     }
     
-    h3 {
-        font-size: 1rem;
-    }
-
-    .social-links {
-        flex-direction: column;
-        gap: 0.8rem;
+    /* Team photo adjustments for mobile */
+    .team-photo {
+        height: 200px;
+        object-fit: contain; /* Show entire image without cropping */
+        object-position: top; /* Align to top to prevent cutting off faces */
     }
     
-    #journal-list {
-        grid-template-columns: 1fr;
-        gap: 1.2rem;
+    /* Special handling for featured cards on mobile */
+    .advisor-card .team-photo,
+    .editor-in-chief-card .team-photo,
+    .founder-card .team-photo {
+        height: 220px;
+        object-fit: cover; /* Keep cover for these important images */
+        object-position: top center; /* Ensure faces are visible */
     }
     
-    .quote {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
+    /* Adjust card height to accommodate contained images */
+    .team-card {
+        min-height: 450px; /* Allow more space for the contained image */
     }
     
-    .welcome {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+    /* Featured update adjustments */
+    .latest-updates .featured-update .news-image {
+        max-width: 100%;
+        min-width: 100%;
     }
     
+    /* Button adjustments */
     .buttons {
         flex-direction: column;
         align-items: center;
     }
     
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .volumes-table {
-        display: block;
-        overflow-x: auto;
-    }
-    
-    .advisor-card,
-    .editor-in-chief-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .advisor-info h3,
-    .editor-in-chief-card .team-info h3 {
-        text-align: center;
-    }
-    
-    .latest-updates .featured-update {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .latest-updates .featured-update .news-image {
-        max-width: 90%;
-        min-width: unset;
-    }
-
-    .journal-archive-page h2 {
-        text-align: center;
-    }
-
-    .archive-intro {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .main-container {
-        padding: 0 0.5rem;
-    }
-    
-    .logo-img {
-        height: 45px;
-    }
-    
-    .logo-text {
-        font-size: 1.3rem;
-    }
-    
-    .logo-tagline {
-        font-size: 0.6rem;
-        letter-spacing: 1.2px;
-    }
-    
-    h1 {
-        font-size: 1.4rem;
-    }
-    
-    h2 {
-        font-size: 1.1rem;
-        margin: 1.5rem 0 0.8rem;
-    }
-    
-    .value-card {
-        flex: 1 1 100%;
-    }
-    
+    /* Contact info adjustments */
     .contact-info {
         grid-template-columns: 1fr;
     }
     
-    .contact-card h3 {
-        font-size: 1rem;
+    /* Values container adjustments */
+    .values-container {
+        flex-direction: column;
     }
     
-    .hero {
-        padding: 1.5rem 1rem;
+    /* Dates container adjustments */
+    .dates-container {
+        flex-direction: column;
     }
     
-    .quote {
-        font-size: 1rem;
+    /* Article grid adjustments */
+    .articles-grid {
+        grid-template-columns: 1fr;
     }
     
-    .welcome {
-        font-size: 0.95rem;
+    /* Featured card adjustments */
+    .founder-card,
+    .editor-in-chief-card,
+    .advisor-card {
+        flex-direction: column;
+        text-align: center;
     }
     
-    .featured-update {
-        padding: 1.2rem;
+    .founder-card .team-photo,
+    .editor-in-chief-card .team-photo,
+    .advisor-card .team-photo {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
     }
     
-    .featured-update h2 {
-        font-size: 1.1rem;
+    /* Footer adjustments */
+    .social-links {
+        flex-direction: column;
+        gap: 1rem;
     }
-    
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
     .team-photo {
-        width: 100%;
         height: 180px;
     }
     
-    ul {
-        padding-left: 0.8rem;
+    .advisor-card .team-photo,
+    .editor-in-chief-card .team-photo,
+    .founder-card .team-photo {
+        height: 200px;
     }
     
-    li {
-        font-size: 0.9rem;
+    .team-card {
+        min-height: 420px;
     }
     
-    .volumes-table th,
-    .volumes-table td {
-        padding: 0.6rem 0.4rem;
-        font-size: 0.85rem;
+    .logo-container {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
     }
     
-    .journal-entry h3 {
-        font-size: 1rem;
+    .logo-text {
+        font-size: 1.6rem;
     }
     
-    .entry-meta {
-        font-size: 0.8rem;
+    .logo-tagline {
+        font-size: 0.55rem;
+    }
+    
+    .journal-entry {
+        padding: 1rem;
+    }
+    
+    .article-actions {
+        flex-direction: column;
     }
     
     .article-btn {
-        padding: 0.35rem 0.7rem;
-        font-size: 0.75rem;
+        width: 100%;
+        justify-content: center;
     }
 }
